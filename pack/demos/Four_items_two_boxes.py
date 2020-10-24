@@ -15,8 +15,8 @@ payload = """{
       },
       "quantity": 4
     }
-  ],
-  "boxTypes": [
+    ],
+    "boxTypes": [
     {
       "weightMax": 150,
       "name": "5x6x8",
@@ -26,8 +26,8 @@ payload = """{
         "z": 8
       }
     }
-  ],
-}"""
+    ]
+    }"""
 
 
 headers = {'Authorization': 'apikey PVjuMKCNFDZcPKdSJgeH_zun3r2ZAAiU-cXk0TClmc-zEUCogYBbvbepucZV8T3z'}
