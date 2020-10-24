@@ -1,6 +1,6 @@
 """Send Items and Box to paccurate API to return Packages"""
-import requests
-from .. import warehouse
+import requests, json
+# from .. import warehouse
 
 
 class Packer:
@@ -16,7 +16,25 @@ class Packer:
         self.headers = {'Authorization': api_key_value}
 
     def get_payload(self, items, box):
-        pass
+        concatenate = '''{"itemSets": ['''
+        for item in items:
+            item_string = '''{
+                "refId": %s,
+                "dimensions": {"x": %s, "y": %s, "z": %s},
+                "quantity": %s
+            },''' % (str(item.ref_id), str(item.dimensions[0]), str(item.dimensions[1]), str(item.dimensions[2]), str(item.quantity))
+            concatenate += item_string
+        concatenate = concatenate[:-1]
+        concatenate += '''],'''
+        box_string = '''
+        "boxTypes": [{
+            "weightMax": %s,
+            "name": %s,
+            "dimensions": {"x": %s, "y": %s, "z": %s}
+        }]
+        }''' % (str(box.max_weight), str(box.name), str(box.dimensions[0]), str(box.dimensions[1]), str(box.dimensions[2]))
+        concatenate += box_string
+        self.payload = json.dumps(concatenate)
 
     def get_response(self):
         if self.url is None:

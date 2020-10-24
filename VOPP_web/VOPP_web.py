@@ -12,12 +12,14 @@ mongo = PyMongo(app, uri = mongo_uri)
 
 @app.route('/test')
 def test():
-    inputs = "0\n1"
-    items = list(map(int, inputs.split("\n")))
+    inputs = "0 2\n1 1"
+    items = inputs.split("\n")
+    for i in range(len(items)):
+        items[i] = items[i].split(" ")
     obj_list = []
     for item_id in items:
-        i_params = mongo.db['inventory'].find()[item_id]
-        obj_list.append(warehouse.ItemSet((i_params['x'],i_params['y'],i_params['z']),i_params['weight'],item_id, 1))
+        i_params = mongo.db['inventory'].find()[item_id[0]]
+        obj_list.append(warehouse.ItemSet((i_params['x'],i_params['y'],i_params['z']),i_params['weight'],item_id[0], item_id[1]))
     app.logger.debug(obj_list)
     #return ', '.join(map(lambda t: str(t.x), obj_list))
     return "\r\n".join(map(str, obj_list))
