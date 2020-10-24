@@ -13,10 +13,9 @@ mongo = PyMongo(app, uri = mongo_uri)
 @app.route('/test')
 def test():
     inputs = "0 2\n1 1"
-
-items = inputs.split("\n")
-for i in range(len(items)):
-    items[i] = items[i].split(" ")
+    items = inputs.split("\n")
+    for i in range(len(items)):
+        items[i] = items[i].split(" ")
     obj_list = []
     for item_id in items:
         i_params = mongo.db['inventory'].find()[item_id[0]]
