@@ -9,6 +9,13 @@ app = Flask(__name__)
 app.config['Mongo_URI'] = mongo_uri
 mongo = PyMongo(app, uri = mongo_uri)
 
+class item():
+    def __init__(self, x, y, z, weight, id):
+        self.x = x
+        self.y = y
+        self.z = z
+        self.weight = weight
+        self.id = id
 
 @app.route('/')
 def input():
