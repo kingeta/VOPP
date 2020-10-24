@@ -1,5 +1,4 @@
 	
-
 {% extends "base.jinja" %}
 
 {% block title %}Edit movie{% endblock %}
@@ -10,10 +9,26 @@
         <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
         <label for="vehicle1"> I have a bike</label><br>
         {% for item in items %}
-            <input type="checkbox" id="vehicle1" name="part" value="{{ item }}">
+            <input type="checkbox" id="{{ item }}" name="part" value="{{ item }}">
             <label for="part">{{ item }}</label><br>
         {% endfor %}
+        
         <button type = "submit">Submit input</button>
 
     </form>
+
+    <form name="bar_input">
+        <input type="text" id="bar_input" size="30" value="Focus here and press enter">
+        <button type = "submit" id = "bar_submit">Submit input</button>
+    </form>
+
+{% endblock %}
+
+{% block javascript %}
+
+<script type="text/javascript">
+        {% include "script.js" %}
+    </script>
+
+
 {% endblock %}

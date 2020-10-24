@@ -25,6 +25,7 @@ def test():
 @app.route('/')
 def input():
     return render_template('input.jinja')
+    
 
 @app.route('/add', methods = ['POST'])
 def input_read():
@@ -33,9 +34,9 @@ def input_read():
 
     return redirect( url_for('input') )
 
-@app.route('/shipping')
+@app.route('/shipping/')
 def shipping():
-    return "Shipping"
+    return render_template('worker.jinja')
 
 @app.route('/receiving')
 def receiving():
