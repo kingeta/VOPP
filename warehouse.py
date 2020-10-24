@@ -6,15 +6,8 @@ class ItemSet:
     
     The dimensions is a tuple (x, y, z) of the dimensions of a single item.
     The weight is a weight of a single member"""
-<<<<<<< HEAD
-    def __init__(self, x, y, z, weight, ref_id, quantity = 1):
-        self.x = x
-        self.y = y
-        self.z = z
-=======
     def __init__(self, dimensions, weight, ref_id, quantity):
         self.dimensions = dimensions
->>>>>>> 324efe5a3d43571c9e2ef2b0f1eb71273afc232e
         self.weight = weight
         self.ref_id = ref_id
         self.quantity = quantity

@@ -15,9 +15,9 @@ def test():
     inputs = "0\n1"
     items = list(map(int, inputs.split("\n")))
     obj_list = []
-    for i in items:
-        i_params = mongo.db['inventory'].find()[i]
-        obj_list.append(warehouse.ItemSet(i_params['x'],i_params['y'],i_params['z'],i_params['weight'],i))
+    for item_id in items:
+        i_params = mongo.db['inventory'].find()[item_id]
+        obj_list.append(warehouse.ItemSet(i_params['x'],i_params['y'],i_params['z'],i_params['weight'],item_id))
     app.logger.debug(obj_list)
     #return ', '.join(map(lambda t: str(t.x), obj_list))
     return "\r\n".join(map(str, obj_list))
