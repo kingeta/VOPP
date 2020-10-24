@@ -10,27 +10,33 @@
 
     <h1 class="title">Edit movie</h1>
 
-    <form action="./addCheckBox" method="post" name="movie_edit">
-        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-        <label for="vehicle1"> I have a bike</label><br>
+    <form action="/shipping/addCheckBox" method="post">
+
+        <input type="checkbox" id="4005800034091" name="parts" value=4005800034091 autocomplete="on">
+        <label for="vehicle1">Plasters</label><br>
+
+        <input type="checkbox" id="4005800034091" name="parts" value=4005800034091 autocomplete="on">
+        <label for="vehicle1">Plasters</label><br>
+
+        <input type="checkbox" id="9780007466061" name="parts" value=9780007466061 autocomplete="on">
+        <label for="vehicle1">GoT</label><br>
+
+        <input type="checkbox" id="9780340894347" name="parts" value=9780340894347 autocomplete="on">
+        <label for="vehicle1">Book2</label><br>
+
+        <input type="checkbox" id="9780007466078" name="parts" value="9780007466078" autocomplete="on">
+        <label for="vehicle1">Got2</label><br>
+
         {% for item in items %}
-            <input type="checkbox" id="{{ item }}" name="part" value="{{ item }}">
-            <label for="part">{{ item }}</label><br>
+            <input type="checkbox" id="{{ item }}" name="parts" value="{{ item }}">
+            <label for="{{ item }}">{{ item }}</label><br>
         {% endfor %}
         
         <button type = "submit">Submit input</button>
 
     </form>
 
-    <form name="bar_input">
-        <input type="text" id="bar_input" size="30" value="Focus here and press enter">
-        <button type = "submit" id = "bar_submit">Submit input</button>
-    </form>
+    <input type="text" id="bar_input" size="30" value="Focus barcode scanner here!" onfocus="this.value=''">
 
 {% endblock %}
 
-{# {% block javascript %}
-
-
-
-{% endblock %} #}

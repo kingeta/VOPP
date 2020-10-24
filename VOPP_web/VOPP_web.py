@@ -45,6 +45,14 @@ def input_read():
 def shipping():
     return render_template('worker.jinja')
 
+@app.route('/shipping/addCheckBox', methods = ['POST'])
+def checkbox_input():
+    if request.method == 'POST':
+        for part in request.form.getlist('parts'):
+            print(part)
+    
+    return redirect( url_for('shipping') )
+
 @app.route('/receiving')
 def receiving():
-    return render_template('receiver.jinja')
+    return True
