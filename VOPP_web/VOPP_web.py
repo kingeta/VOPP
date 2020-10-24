@@ -20,7 +20,7 @@ def test():
         obj_list.append(warehouse.ItemSet(i_params['x'],i_params['y'],i_params['z'],i_params['weight'],i))
     app.logger.debug(obj_list)
     #return ', '.join(map(lambda t: str(t.x), obj_list))
-    return "\n\n".join(map(str, obj_list))
+    return "\r\n".join(map(str, obj_list))
 
 @app.route('/')
 def input():
