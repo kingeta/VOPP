@@ -11,6 +11,9 @@ class ItemSet:
         self.weight = weight
         self.ref_id = ref_id
         self.quantity = quantity
+    
+    def __str__(self):
+        return f"({self.x}, {self.y}, {self.z}), {self.weight}"
 
 
 class Box:
