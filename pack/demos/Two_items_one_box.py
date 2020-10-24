@@ -11,7 +11,7 @@ payload = """{
         "y": 6,
         "z": 4
       },
-      "quantity": 4
+      "quantity": 2
     }
     ],
     "boxTypes": [
@@ -29,4 +29,3 @@ payload = """{
 
 r=request_function(payload)
 print (r.text)
-
