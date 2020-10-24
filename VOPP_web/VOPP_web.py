@@ -17,7 +17,7 @@ def test():
     obj_list = []
     for item_id in items:
         i_params = mongo.db['inventory'].find()[item_id]
-        obj_list.append(warehouse.ItemSet(i_params['x'],i_params['y'],i_params['z'],i_params['weight'],item_id))
+        obj_list.append(warehouse.ItemSet((i_params['x'],i_params['y'],i_params['z']),i_params['weight'],item_id, 1))
     app.logger.debug(obj_list)
     #return ', '.join(map(lambda t: str(t.x), obj_list))
     return "\r\n".join(map(str, obj_list))
