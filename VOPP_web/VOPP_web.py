@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, make_response
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from .. import 
 #import mistune
 
 mongo_uri = "mongodb://localhost:27017/VOPP"
@@ -9,13 +10,6 @@ app = Flask(__name__)
 app.config['Mongo_URI'] = mongo_uri
 mongo = PyMongo(app, uri = mongo_uri)
 
-class item():
-    def __init__(self, x, y, z, weight, id):
-        self.x = x
-        self.y = y
-        self.z = z
-        self.weight = weight
-        self.id = id
 
 @app.route('/')
 def input():
