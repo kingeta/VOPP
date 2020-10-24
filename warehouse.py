@@ -1,4 +1,5 @@
-### Now THIS is a good python module
+"""Classes used in warehouse"""
+
 
 class Item():
     def __init__(self, x, y, z, weight, id):
@@ -8,9 +9,11 @@ class Item():
         self.weight = weight
         self.id = id
 
+
 class Box():
     def __init__(self, x, y, z):
         pass
+
 
 class Package():
     pass
