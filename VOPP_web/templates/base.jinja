@@ -15,18 +15,35 @@
     <link rel="icon" type="image/png" href="/favicon.png">
    
 
-    <link rel="stylesheet" href="/css/sheet.css">
+    <!-- <link rel="stylesheet" href="/css/sheet.css"> !-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/holiday.css@0.9.5" />
 
     {% endblock %}
 </head>
 
 <body>
 
+    <header>
+        <h1>Great work</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="./">Input</a></li>
+        <li><a href="/shipping/">Shipping</a></li>
+        <li><a href="/receiving/">Receiving</a></li>
+      </ul>
+    </nav>
 
     <!-- {% block navbar %}{% endblock %} !-->
 
-
+    <main>
     {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        Created by <b>The Bowden Cables</b>
+    </footer>
 
 </body>
 
