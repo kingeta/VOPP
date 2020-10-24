@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, make_response
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from .. import 
+#from .. import item 
 #import mistune
 
 mongo_uri = "mongodb://localhost:27017/VOPP"
@@ -14,6 +14,11 @@ mongo = PyMongo(app, uri = mongo_uri)
 @app.route('/')
 def input():
     return render_template('input.jinja')
+
+@app.route('/test')
+def test():
+    test_items = mongo.db['inventory'].find({'status': 'A'})
+    return ', '.join(map(str, test_items))
 
 @app.route('/add', methods = ['POST'])
 def input_read():
