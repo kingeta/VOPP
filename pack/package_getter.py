@@ -1,6 +1,6 @@
 """Send Items and Box to paccurate API to return Packages"""
 import requests, json
-from .. import warehouse
+# from .. import warehouse
 
 
 class Packer:

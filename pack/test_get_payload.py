@@ -12,7 +12,7 @@ class ItemSet:
         self.quantity = quantity
     
     def __str__(self):
-        return f"({self.x}, {self.y}, {self.z}), {self.weight}"
+        return f"({self.dimensions}), {self.weight}"
 class Box:
     """ dimensions is a tuple of (x, y, z)"""
     def __init__(self, name, dimensions, max_weight):
