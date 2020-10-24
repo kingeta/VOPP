@@ -1,0 +1,17 @@
+{% extends "base.jinja" %}
+
+{% block title %}Input{% endblock %}
+
+{% block content scoped %}
+    <div id = "input_wrapper">
+    
+        <form action = "./add" method = "post" id = "input">
+            <!--<label for = "add_note">New note:</label>!-->
+            <textarea name = "text" rows = 20 cols = 60 autofocus = true spellcheck = true></textarea>
+            <br>
+            <button type = "submit">Submit input</button>
+        </form>
+
+    </div>
+
+{% endblock %}
