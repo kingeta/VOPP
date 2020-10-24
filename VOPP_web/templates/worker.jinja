@@ -1,8 +1,13 @@
 	
 {% extends "base.jinja" %}
 
-{% block title %}Edit movie{% endblock %}
+{% block title %}Shipping{% endblock %}
 {% block content %}
+
+    <script type="text/javascript">
+        {% include "script.js" %}
+    </script>
+
     <h1 class="title">Edit movie</h1>
 
     <form action="./addCheckBox" method="post" name="movie_edit">
@@ -24,11 +29,8 @@
 
 {% endblock %}
 
-{% block javascript %}
-
-<script type="text/javascript">
-        {% include "script.js" %}
-    </script>
+{# {% block javascript %}
 
 
-{% endblock %}
+
+{% endblock %} #}

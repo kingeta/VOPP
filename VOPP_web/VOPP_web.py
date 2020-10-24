@@ -34,10 +34,10 @@ def input_read():
 
     return redirect( url_for('input') )
 
-@app.route('/shipping/')
+@app.route('/shipping')
 def shipping():
     return render_template('worker.jinja')
 
 @app.route('/receiving')
 def receiving():
-    return "Receiving"
+    return render_template('receiver.jinja')
