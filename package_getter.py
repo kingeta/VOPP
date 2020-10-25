@@ -21,10 +21,10 @@ class Packer:
         for item in items:
             item_string = '''{
                 "refId": %s,
+                "color": %s,
                 "dimensions": {"x": %s, "y": %s, "z": %s},
                 "quantity": %s
-                "colour": %s
-            },''' % (str(item.ref_id), str(item.dimensions[0]), str(item.dimensions[1]), str(item.dimensions[2]), str(item.quantity), str(item.colour))
+            },''' % (str(item.ref_id), str(item.colour), str(item.dimensions[0]), str(item.dimensions[1]), str(item.dimensions[2]), str(item.quantity))
             concatenate += item_string
         concatenate = concatenate[:-1]
         concatenate += '''],'''
@@ -86,6 +86,7 @@ class Packer:
                                       item['item']['dimensions']['y'],
                                       item['item']['dimensions']['z'])
                 itemset = ItemSet(itemset_dimensions, item['item']['weight'], item['item']['refId'], 1,item['item']['color'])
+                print(item['item']['color'])
                 itemset_location = (item['item']['origin']['x'],
                                     item['item']['origin']['y'],
                                     item['item']['origin']['z'])
