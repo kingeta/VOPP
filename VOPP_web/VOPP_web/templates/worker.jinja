@@ -23,21 +23,6 @@
 
     <form action="./shipping/addCheckBox" method="post">
 
-        <input type="checkbox" id="4005800034091" name="parts" value=4005800034091 autocomplete="on">
-        <label for="vehicle1">Plasters</label><br>
-
-        <input type="checkbox" id="4005800034091" name="parts" value=4005800034091 autocomplete="on">
-        <label for="vehicle1">Plasters</label><br>
-
-        <input type="checkbox" id="9780007466061" name="parts" value=9780007466061 autocomplete="on">
-        <label for="vehicle1">GoT</label><br>
-
-        <input type="checkbox" id="9780340894347" name="parts" value=9780340894347 autocomplete="on">
-        <label for="vehicle1">Book2</label><br>
-
-        <input type="checkbox" id="9780007466078" name="parts" value="9780007466078" autocomplete="on">
-        <label for="vehicle1">Got2</label><br>
-
         {% for item in items %}
             <input type="checkbox" id="{{ item }}" name="parts" value="{{ item }}">
             <label for="{{ item }}">{{ item }}</label><br>
