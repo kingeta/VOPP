@@ -96,8 +96,8 @@ class Packer:
             packages.append(Package(items_and_locations, box, image))
         return packages
 
-    def pack(self, items, box):
+    def pack(self, items, boxes):
         """ Wrapper function for set_payload, get_response and get_packages"""
-        self.get_payload(items, box)
+        self.set_payload(items, boxes)
         self.get_response()
         return self.get_packages()
