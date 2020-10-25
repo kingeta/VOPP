@@ -6,7 +6,7 @@
 [VOPP](https://github.com/kingeta/VOPP) is Python-based library that improves the logistics of warehouses and businesses that exchange packages and physical goods between each other. VOPP reduces costs associated with package management by improving packaging efficiency whilst also reducing the number of errors made in the process. It is a fully integrated end-to-end solution that provides a complete loop for warehouses and their customers and contractors to optimize their logistics.
 
 ## Why should our business use VOPP?
-VOPP is a Free-and-Open-Source package licensed under the [MIT License](https://github.com/kingeta/VOPP/blob/main/LICENSE), so it is ideal for SMEs that want to reduce their logistics costs without paying for an expensive commercial solution. VOPP is completely modular and flexible, consisting of multiple interconnected components that can be used for other parts of the business and hence connect to existing solutions in a non-disruptive manner. Furthermore, the intuitive UI of the VOPP web app is very easy to use and doesn't require the employees to endure a steep learning curve. 
+The majority of VOPP is Free-and-Open-Source and licensed under the [MIT License](https://github.com/kingeta/VOPP/blob/main/LICENSE), so it is ideal for SMEs that want to reduce their logistics costs without paying for an expensive commercial solution. VOPP is completely modular and flexible, consisting of multiple interconnected components that can be used for other parts of the business and hence connect to existing solutions in a non-disruptive manner. Furthermore, the intuitive UI of the VOPP web app is very easy to use and doesn't require the employees to endure a steep learning curve. 
 
 ## How does VOPP work?
 At the beginning of the VOPP cycle there is a _Customer_, for example a Store that wants to order a product consisting of multiple parts located in a _Warehouse_. The _Customer_ opens the online web application and inputs the IDs of items that they require.
@@ -34,7 +34,12 @@ In the unfortanet event of an item being lost in delivery, the _Customer_ doesnt
 This completes the end-to-end loop of VOSS, which completes all the logistics between the _Customer_ and the _Warehouse_.
 
 ## How should we run VOPP?
-explain the tech stack
+Under the Hood, 
 
 ## Authors
 **The Bowden Cables** Team of the IfM Hackathon 2020.
+- Herby Bowden (capt'n)
+- Egle Augustaityte
+- Louis Relandeau
+- David O'Brien-Moller
+- Adam Sroka
