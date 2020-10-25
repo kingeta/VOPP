@@ -25,6 +25,9 @@ class Packer:
                 "dimensions": {"x": %s, "y": %s, "z": %s},
                 "quantity": %s
             },''' % (str(item.ref_id), str(item.colour), str(item.dimensions[0]), str(item.dimensions[1]), str(item.dimensions[2]), str(item.quantity))
+            
+            print(item_string)
+
             concatenate += item_string
         concatenate = concatenate[:-1]
         concatenate += '''],'''
@@ -49,7 +52,7 @@ class Packer:
                                  weight=itemset.weight,
                                  dimensions=itemset_dimensions,
                                  quantity=itemset.quantity,
-                                 colour=itemset.colour))
+                                 color=itemset.colour))
         boxtypes = list()
         for box in boxes:
             box_dimensions = dict(x=box.dimensions[0],
