@@ -6,14 +6,15 @@ class ItemSet:
     
     The dimensions is a tuple (x, y, z) of the dimensions of a single item.
     The weight is a weight of a single member"""
-    def __init__(self, dimensions, weight, ref_id, quantity):
+    def __init__(self, dimensions, weight, ref_id, quantity, colour):
         self.dimensions = dimensions
         self.weight = weight
         self.ref_id = ref_id
         self.quantity = quantity
+        self.colour = colour
     
     def __str__(self):
-        return f"An ItemSet of {self.quantity} individual items of size {self.dimensions}, individual weight {self.weight}, id {self.ref_id}"
+        return f"An ItemSet of {self.quantity} individual items of size {self.dimensions}, individual weight {self.weight}, id {self.ref_id}, colour {self.colour}"
 
 
 class Box:

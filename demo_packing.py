@@ -6,7 +6,7 @@ from warehouse import ItemSet, Box
 API_KEY = 'PVjuMKCNFDZcPKdSJgeH_zun3r2ZAAiU-cXk0TClmc-zEUCogYBbvbepucZV8T3z'
 
 # Create dummy data - "Four items, two boxes" — example 3 at docs.paccurate.io
-items = [ItemSet((5, 6, 4), 2, 0, 4)]
+items = [ItemSet((5, 6, 4), 2, 0, 4,"tomato")]
 
 # Specify types of boxes to be used — only one type in this case
 boxes = [Box("5x6x8", (5, 6, 8), 150)]
