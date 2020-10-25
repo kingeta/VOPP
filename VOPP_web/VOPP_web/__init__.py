@@ -68,7 +68,7 @@ def receiving():
     # Set api key
     API_KEY = 'PVjuMKCNFDZcPKdSJgeH_zun3r2ZAAiU-cXk0TClmc-zEUCogYBbvbepucZV8T3z'
 
-    # Create dummy data - "Four items, two boxes" — example 3 at docs.paccurate.io
+    # Create dummy data - Four items, two boxes — example 3 at docs.paccurate.io
     # items = [ItemSet((5, 6, 4), 2, 0, 4)]
     items = obj_list
 
