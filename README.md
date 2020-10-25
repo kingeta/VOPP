@@ -21,6 +21,8 @@ These items and boxes are then send to the [Paccurate API](https://paccurate.io/
 
 This information is displayed on the web application in a warehouse computer to a warehouse employee, who finds each _Item_ in the warehouse, scans its barcode with a barcode scanner as a proof of it being packed, and places it into the _Box_ in the required order.
 
+![Barcode Scanning](https://github.com/kingeta/VOPP/raw/main/pack/images/scanning_barcode.png)
+
 Once this is completed, the _Package_ is shipped to the _Customer_.
 
 When the _Package_ arrives, the _Customer_ opens the web application again, where another interactive interface is waiting. Here, they can tick off every item that should have been delivered.
