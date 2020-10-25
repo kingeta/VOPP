@@ -1,5 +1,5 @@
 import json
-
+# This script is Deprecated TODO Delete
 class ItemSet:
     """A set of identical items.
     
