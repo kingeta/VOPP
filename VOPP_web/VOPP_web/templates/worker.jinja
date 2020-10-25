@@ -8,9 +8,18 @@
         {% include "script.js" %}
     </script>
 
-    <h1 class="title">Edit movie</h1>
 
-    <form action="/shipping/addCheckBox" method="post">
+    <h1 class="row">Edit movie</h1>
+
+    <div class = "column">
+
+    <img src = "https://upload.wikimedia.org/wikipedia/commons/7/76/Louis_Vuitton_logo_and_wordmark.svg"></img>
+
+    </div>
+
+    <div class = "column">
+
+    <form action="./shipping/addCheckBox" method="post">
 
         <input type="checkbox" id="4005800034091" name="parts" value=4005800034091 autocomplete="on">
         <label for="vehicle1">Plasters</label><br>
@@ -37,6 +46,22 @@
     </form>
 
     <input type="text" id="bar_input" size="30" value="Focus barcode scanner here!" onfocus="this.value=''">
+
+
+    <style>
+        /* Create two equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
 
 {% endblock %}
 

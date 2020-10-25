@@ -19,6 +19,7 @@ function check(itemString) {
 
     }
     else{
+        alert("Item not in order!\nPress Enter to close")
     }
 
     return true;

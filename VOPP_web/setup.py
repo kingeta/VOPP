@@ -1,5 +1,10 @@
-#import subprocess
-import pymongo
+from setuptools import setup
 
-client = pymongo.MongoClient()
-db = client.notes
+setup(
+    name = 'VOPP_web',
+    packages = ['VOPP_web'],
+    include_package_data = True,
+    install_requires=[
+        'flask',
+    ],
+)
