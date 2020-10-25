@@ -55,4 +55,4 @@ def checkbox_input():
 
 @app.route('/receiving')
 def receiving():
-    return True
+    return render_template('receiver.jinja')
