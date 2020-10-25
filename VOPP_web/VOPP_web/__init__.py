@@ -27,7 +27,8 @@ def format_input(input_order):
 
 @app.route('/test')
 def test():
-    inputs = "0 2\n1 1"
+    obj_list.clear()
+    inputs = "0 1\n1 5"
     items = format_input(inputs)
     app.logger.debug(obj_list)
     for item_id in items:
@@ -39,7 +40,7 @@ def test():
 
 @app.route('/')
 def input():
-    return render_template('input.jinja')
+    return render_template('input.jinja', items = )
     
 
 @app.route('/add', methods = ['POST'])
@@ -70,6 +71,7 @@ def receiving():
 
     # Create dummy data , Four items, two boxes , example 3 at docs.paccurate.io
     # items = [ItemSet((5, 6, 4), 2, 0, 4)]
+    test()
     items = obj_list
     app.logger.debug(items)
 
