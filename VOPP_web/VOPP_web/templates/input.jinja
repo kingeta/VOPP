@@ -1,11 +1,11 @@
 {% extends "base.jinja" %}
 
-{% block title %}Input{% endblock %}
+{% block title %}Order{% endblock %}
 
 {% block content scoped %}
-    <p>
-        This page is to add sample packages
-    </p>
+    <h1>
+        Order Items
+    </h1>
 
     <div id = "input_wrapper">
     
@@ -13,7 +13,7 @@
             <!--<label for = "add_note">New note:</label>!-->
             <textarea name = "text" rows = 20 cols = 60 autofocus = true spellcheck = true></textarea>
             <br>
-            <button type = "submit">Submit input</button>
+            <button type = "submit">Submit order</button>
         </form>
 
     </div>

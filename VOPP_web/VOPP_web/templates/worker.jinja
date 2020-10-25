@@ -21,18 +21,21 @@
 
     <div class = "column">
 
+    <p>Scan items to confirm they have been added to the order</p>
+
     <form action="./shipping/addCheckBox" method="post">
 
         {% for item in items %}
             <input type="checkbox" id="{{ item }}" name="parts" value="{{ item }}">
             <label for="{{ item }}">{{ item }}</label><br>
         {% endfor %}
-        
+        <br>
+        <input type="text" id="bar_input" size="30" value="Focus barcode scanner here!" onfocus="this.value=''">
+        <br>
         <button type = "submit">Submit input</button>
 
     </form>
 
-    <input type="text" id="bar_input" size="30" value="Focus barcode scanner here!" onfocus="this.value=''">
 
 
     <style>

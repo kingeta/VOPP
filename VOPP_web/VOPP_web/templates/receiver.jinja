@@ -9,7 +9,7 @@
     </script>
 
 
-    <h1 class="row">Please check your order!</h1>
+    <!-- <h1 class="row">Please check your order!</h1> !-->
 
     <div class = "column">
 
@@ -21,8 +21,11 @@
 
         <div class = "column">
 
-        <h1>Please check the items that are in your order</h1>
+        <h1>Order Confirmation</h1>
 
+
+        <p>Tick the items you have received</p>
+        
         <form action="./receiving/missing_items" method="post">
 
             {% for item in items %}
@@ -32,7 +35,7 @@
 
             <input type="checkbox" id = "packed" name = "parts" value = "not_correct">
             <label for="packed">Tick if you are NOT satisfied with the packing</label><br>
-        
+            <br>
             <button type = "submit">Submit Response</button>
 
         </form>

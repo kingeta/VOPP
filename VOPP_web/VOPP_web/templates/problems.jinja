@@ -1,0 +1,21 @@
+	
+{% extends "base.jinja" %}
+
+{% block title %}Return/Replace{% endblock %}
+{% block content %}
+
+
+    <h1>Return/Replace</h1>
+
+
+    <p>You will receive replacements for the following items</p>
+    
+    <ul>
+    {% for item in items %}
+        <li>{{ item }}</li>
+    {% endfor %}
+    </ul>
+
+
+{% endblock %}
+
