@@ -41,7 +41,7 @@ def test():
     
     for item, quantity in items:
         i_params = mongo.db['storage'].find({'item': item})[0] 
-        obj_list.append(ItemSet((i_params['x']/5,i_params['y']/5,i_params['z']/5),i_params['weight'], item, quantity, i_params['color']))
+        obj_list.append(ItemSet((i_params['x']/5,i_params['y']/5,i_params['z']/5),i_params['weight'], item, quantity, i_params['color'])) # lol the rescale for aesthetic purpose of SVG displays
     
     #return ', '.join(map(lambda t: str(t.x), obj_list))
     return "\r\n".join(map(str, obj_list))
@@ -50,7 +50,6 @@ def test():
 def input():
     return render_template('input.jinja')
     
-
 @app.route('/add', methods = ['POST'])
 def input_read():
     input_text = request.form['text']
