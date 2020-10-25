@@ -9,11 +9,13 @@
     </script>
 
 
-    <h1 class="row">Edit movie</h1>
+    <h1 class="row">Shipping Instructions</h1>
 
     <div class = "column">
 
-    <img src = "https://upload.wikimedia.org/wikipedia/commons/7/76/Louis_Vuitton_logo_and_wordmark.svg"></img>
+        {% for image in images %}
+            {{ image|safe }}
+        {% endfor %}
 
     </div>
 

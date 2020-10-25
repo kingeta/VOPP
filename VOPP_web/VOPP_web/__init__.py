@@ -61,6 +61,14 @@ def checkbox_input():
     
     return redirect(url_for('shipping'))
 
+@app.route('/receiving/missing_items', methods = ['POST'])
+def receiver_input():
+    if request.method == 'POST':
+        for part in request.form.getlist('parts'):
+            print(part)
+    
+    return redirect(url_for('receiving'))
+
 @app.route('/receiving')
 def receiving():
     # Cribbed from the old demo file
@@ -73,7 +81,7 @@ def receiving():
     items = obj_list
     app.logger.debug(items)
 
-    # Specify types of boxes to be used — only one type in this case
+    # Specify types of boxes to be used only one type in this case
     boxes = [Box("5x6x8", (5, 6, 8), 150)]
 
     # Pack stuff
@@ -85,4 +93,4 @@ def receiving():
 
 
 
-    return render_template('receiver.jinja', images = [p.image for p in packages])
+    return render_template('receiver.jinja', images = [p.image for p in packages],items = ["id1","id2"])

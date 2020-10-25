@@ -4,15 +4,56 @@
 {% block title %}Receiving{% endblock %}
 {% block content %}
 
-    <h1 class="title">Receiving</h1>
+    <script type="text/javascript">
+        {% include "script.js" %}
+    </script>
 
-    <p>Content goes here</p>
 
-    {% include "demo_image_1.html" ignore missing %}
+    <h1 class="row">Please check your order!</h1>
 
-    {% for image in images %}
-        {{ image|safe }}
-    {% endfor %}
+    <div class = "column">
+
+        {% for image in images %}
+            {{ image|safe }}
+        {% endfor %}
+
+    </div>
+
+        <div class = "column">
+
+        <h1>Please check the items that are in your order</h1>
+
+        <form action="./receiving/missing_items" method="post">
+
+            {% for item in items %}
+                <input type="checkbox" id="{{ item }}" name="parts" value="{{ item }}">
+                <label for="{{ item }}">{{ item }}</label><br>
+            {% endfor %}
+
+            <input type="checkbox" id = "packed" name = "parts" value = "not_correct">
+            <label for="packed">Tick if you are NOT satisfied with the packing</label><br>
+        
+            <button type = "submit">Submit Response</button>
+
+        </form>
+
+    </div>
+
+
+    <style>
+        /* Create two equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
 
 {% endblock %}
 
