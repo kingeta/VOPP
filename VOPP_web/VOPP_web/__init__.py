@@ -79,8 +79,10 @@ def checkbox_input():
 @app.route('/receiving/missing_items', methods = ['POST'])
 def receiver_input():
     if request.method == 'POST':
-        for part in request.form.getlist('parts'):
-            print(part)
+        parts_arrived = request.form.getlist('parts')
+        problems = [item for item in list_item_ids if item not in parts_arrived]
+        if(len(problems))>0:
+            return render_template('base.jinga')
     
     return redirect(url_for('receiving'))
 
@@ -107,4 +109,4 @@ def receiving():
 
     # app.logger.debug(packages[0].image)
 
-    return render_template('receiver.jinja', images = [p.image for p in packages])
+    return render_template('receiver.jinja', images = [p.image for p in packages],items=list_item_ids)
