@@ -1,5 +1,6 @@
 from request import request_function
 
+
 payload = """{
   "itemSets": [
     {
@@ -38,5 +39,5 @@ payload = """{
     ]
     }"""
 
-r=request_function(payload)
-print (r.text)
+r = request_function(payload)
+print(r.text)
