@@ -30,12 +30,12 @@ class Box:
 class Package:
     """A Package corresponds to one Box that contains
     items of class ItemSet of quantity 1.
-    items_and_locations is a list of tuples ordered by the order of packages being put in the box
+    itemsets_and_locations is a list of tuples ordered by the order of packages being put in the box
     each tuple contains a ItemSet class and a """
-    def __init__(self, items_and_locations, box, image):
-        self.items_and_locations = items_and_locations
+    def __init__(self, itemsets_and_locations, box, image):
+        self.itemsets_and_locations = itemsets_and_locations
         self.box = box
         self.image = image
 
     def __str__(self):
-        return f'Package of Box {self.box} containing ItemSets at locations {self.items_and_locations}'
+        return f'Package of Box {self.box} containing ItemSets at locations {self.itemsets_and_locations}'

@@ -75,6 +75,7 @@ class Packer:
         if self.response is None:
             raise ValueError('There is no response from the Paccurate API')
         response_json = json.loads(self.response.text)
+        # TODO save the values of the lenBoxes, lenItems keys for debugging
         packages = list()
         for box, image in zip(response_json['boxes'], response_json['svgs']):
             items_and_locations = list()
@@ -97,7 +98,7 @@ class Packer:
         return packages
 
     def pack(self, items, boxes):
-        """ Wrapper function for set_payload, get_response and get_packages"""
+        """Wrapper function for set_payload, get_response and get_packages"""
         self.set_payload(items, boxes)
         self.get_response()
         return self.get_packages()
