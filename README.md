@@ -5,6 +5,7 @@ Virtual Operation Process Planning
 - [ ] Finalize file-directory structure (interfacing of modules)
 - [ ] Remove legacy files and directories (pack???)
 - [ ] Finalize code style
+- [ ] Add license
 - [ ] Write docstrings
 - [ ] Come up with fancy name???
 - [ ] Create `requirements.txt`
