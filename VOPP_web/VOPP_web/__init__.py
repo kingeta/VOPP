@@ -17,6 +17,7 @@ app = Flask(__name__, template_folder = template_path)
 app.config['Mongo_URI'] = mongo_uri
 #application = app.app
 mongo = PyMongo(app, uri = mongo_uri)
+obj_list = []
 
 def format_input(input_order):
     formatted = input_order.split("\n")
@@ -28,7 +29,6 @@ def format_input(input_order):
 def test():
     inputs = "0 2\n1 1"
     items = format_input(inputs)
-    obj_list = []
     app.logger.debug(obj_list)
     for item_id in items:
         i_params = mongo.db['inventory'].find()[item_id[0]]
@@ -69,7 +69,8 @@ def receiving():
     API_KEY = 'PVjuMKCNFDZcPKdSJgeH_zun3r2ZAAiU-cXk0TClmc-zEUCogYBbvbepucZV8T3z'
 
     # Create dummy data - "Four items, two boxes" — example 3 at docs.paccurate.io
-    items = [ItemSet((5, 6, 4), 2, 0, 4)]
+    # items = [ItemSet((5, 6, 4), 2, 0, 4)]
+    items = obj_list
 
     # Specify types of boxes to be used — only one type in this case
     boxes = [Box("5x6x8", (5, 6, 8), 150)]
