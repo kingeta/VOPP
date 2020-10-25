@@ -1,6 +1,7 @@
 """Module for sending Items and Boxes to Paccurate API to return Packages"""
 import requests
 import json
+from warehouse import ItemSet, Box, Package
 
 
 class Packer:
@@ -60,7 +61,6 @@ class Packer:
                        boxTypes=boxtypes)
         self.payload = json.dumps(payload)
 
-
     def get_response(self):
         if self.url is None:
             raise ValueError('The Paccurate API URL is not set')
@@ -70,8 +70,34 @@ class Packer:
             raise ValueError('The Paccurate API key is not set')
         self.response = requests.post(self.url, data=self.payload, headers=self.headers)
         
-    def get_package(self):
+    def get_packages(self):
+        """Returns a list of class Package items"""
         if self.response is None:
             raise ValueError('There is no response from the Paccurate API')
-        # TODO
-        # return json.loads(self.response.text)
+        response_json = json.loads(self.response.text)
+        packages = list()
+        for box, image in zip(response_json['boxes'], response_json['svgs']):
+            items_and_locations = list()
+            for item in box['box']['items']:
+                itemset_dimensions = (item['item']['dimensions']['x'],
+                                      item['item']['dimensions']['y'],
+                                      item['item']['dimensions']['z'])
+                itemset = ItemSet(itemset_dimensions, item['item']['weight'], item['item']['refId'], 1)
+                itemset_location = (item['item']['origin']['x'],
+                                    item['item']['origin']['y'],
+                                    item['item']['origin']['z'])
+                
+                items_and_locations.append((itemset, itemset_location))
+            box_dimensions = (box['box']['dimensions']['x'],
+                              box['box']['dimensions']['y'],
+                              box['box']['dimensions']['z'])
+            box = Box(box['box']['name'], box_dimensions, box['box']['weightMax'])
+
+            packages.append(Package(items_and_locations, box, image))
+        return packages
+
+    def pack(self, items, box):
+        """ Wrapper function for set_payload, get_response and get_packages"""
+        self.get_payload(items, box)
+        self.get_response()
+        return self.get_packages()
