@@ -9,5 +9,10 @@
     <p>Content goes here</p>
 
     {% include "demo_image_1.html" ignore missing %}
+
+    {% for image in images %}
+        {{ image|safe }}
+    {% endfor %}
+
 {% endblock %}
 
