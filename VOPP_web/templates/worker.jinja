@@ -8,7 +8,16 @@
         {% include "script.js" %}
     </script>
 
-    <h1 class="title">Edit movie</h1>
+
+    <h1 class="row">Edit movie</h1>
+
+    <div class = "column">
+
+    <img src = "https://upload.wikimedia.org/wikipedia/commons/7/76/Louis_Vuitton_logo_and_wordmark.svg" float:right;></img>
+
+    </div>
+
+    <div class = "column">
 
     <form action="/shipping/addCheckBox" method="post">
 
@@ -37,6 +46,22 @@
     </form>
 
     <input type="text" id="bar_input" size="30" value="Focus barcode scanner here!" onfocus="this.value=''">
+
+
+    <style>
+        /* Create two equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
 
 {% endblock %}
 
