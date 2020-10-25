@@ -33,8 +33,14 @@ In the unfortanet event of an item being lost in delivery, the _Customer_ doesnt
 
 This completes the end-to-end loop of VOSS, which completes all the logistics between the _Customer_ and the _Warehouse_.
 
-## How should we run VOPP?
-Under the Hood, 
+## How does VOPP work under the hood?
+Under the Hood, VOPP consists of multiple interconnected modular components.
+
+![Tech_Stack](https://github.com/kingeta/VOPP/raw/main/pack/images/tech_stack.png)
+
+The web app runs on Flask, which interfaces the _Warehouse_, which consists of a MongoDB database for the items. Once the queried items are retrieved from the database, they are bundled into _ItemSets_ and send alongside with _Boxes_ to the _Packer_ class. _Packer_ sends a HTTP post request to Paccurate API. The repsponse from the API is parsed and converted into a list of _Packages_. These are then displayed in the web app. The web app is then connected the the barcode scanner, which inputs the data.
+
+All other components just use the Flask app.
 
 ## Authors
 **The Bowden Cables** Team of the IfM Hackathon 2020.
